@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:paddingBottom="@dimen/drag_drop_list_view_top_padding_bottom"
+    android:paddingTop="@dimen/drag_drop_list_view_top_padding_top">
+
+    <ProgressBar
+        android:id="@+id/drag_drop_list_view_refresh_progress_bar"
+        style="@style/AppTheme.DragDropProgressBarTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/drag_drop_list_view_text_layout"
+        android:indeterminate="true"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/drag_drop_list_view_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/drag_drop_list_view_text_layout"
+        android:contentDescription="@null"
+        android:src="@drawable/icon_arrow_direction_down"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/drag_drop_list_view_text_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/drag_drop_list_view_title_text"
+            style="@style/AppTheme.DragDropMediumFontTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@color/grey_400" />
+
+        <TextView
+            android:id="@+id/drag_drop_list_view_subtitle_text"
+            style="@style/AppTheme.DragDropSmallFontTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/drag_drop_list_view_title_text"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@color/grey_400"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>

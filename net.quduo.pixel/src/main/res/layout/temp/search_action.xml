@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/grey_900"
+    android:orientation="horizontal"
+    android:paddingRight="8dp">
+
+    <Button
+        android:id="@+id/back_action_item"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/action_item_background"
+        android:text="@string/icon_arrow_left"
+        android:textColor="@color/white"
+        android:textSize="26dp" />
+
+    <ImageView
+        android:layout_width="1px"
+        android:layout_height="28dp"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@null"
+        android:src="@color/black" />
+
+    <RelativeLayout
+        android:id="@+id/search_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_weight="1.0">
+
+        <TextView
+            android:id="@+id/search_icon"
+            android:layout_width="32.0dp"
+            android:layout_height="32.0dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="@string/icon_search"
+            android:textColor="@color/white"
+            android:textSize="26dp" />
+
+        <!-- AutoCompleteTextView -->
+        <!--
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        -->
+        <EditText
+            android:id="@+id/search_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@id/search_icon"
+            android:background="@null"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical|left"
+            android:hint="请输入查寻关键字"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/grey_500"
+            android:textCursorDrawable="@null"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/clean_icon"
+            android:layout_width="32.0dp"
+            android:layout_height="32.0dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="@string/icon_clean"
+            android:textColor="@color/grey_500"
+            android:textSize="26dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/edit_text_line_pink" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/voice_layout"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/voice_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/icon_voice"
+            android:textColor="@drawable/text_view_selector"
+            android:textSize="26dp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="6dp"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/edit_text_line_left_no_close_pink" />
+    </RelativeLayout>
+
+</LinearLayout>

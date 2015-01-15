@@ -1,0 +1,16 @@
+屏幕
+-res/layout         默认中等屏幕
+-res/layout-small   小屏幕
+-res/layout-large   大屏幕
+-res/layout-xlarge  特大屏幕
+-res/layout-land    横屏
+-res/layout-port    竖屏
+
+-res/layout-finger  finger使用在对手指触摸支持很好的屏幕(finger-friendly touchscree).
+
+-res/drawable       默认中等密度
+-res/drawable-hdpi  高密度 ~240dpi
+-res/drawable-mdpi  中等密度 160dpi
+-res/drawable-xhdpi 更高密度 ~320dpi
+-res/drawable-nodpi 所有密度资源，无论什么密度屏幕都会适配。
+-res/drawable-tvdpi 介于mdpi~hdpi 约213dpi 主要应用在电视

@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+&lt;!&ndash; A DrawerLayout is intended to be used as the top-level content view using match_parent for both width and height to consume the full space available. &ndash;&gt;
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="net.quduo.pixel.interfaces.android.activity.MainActivity">
+
+    &lt;!&ndash; As the main content view, the view below consumes the entire
+         space available using match_parent in both dimensions. &ndash;&gt;
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    &lt;!&ndash; android:layout_gravity="start" tells DrawerLayout to treat
+         this as a sliding drawer on the left side for left-to-right
+         languages and on the right side for right-to-left languages.
+         If you're not building against API 17 or higher, use
+         android:layout_gravity="left" instead. &ndash;&gt;
+    &lt;!&ndash; The drawer is given a fixed width in dp and extends the full height of
+         the container. &ndash;&gt;
+    <fragment
+        android:id="@+id/navigation_drawer"
+        android:name="net.quduo.pixel.interfaces.android.fragment.NavigationDrawerFragment"
+        android:layout_width="@dimen/navigation_drawer_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        tools:layout="@layout/fragment_navigation_drawer" />
+
+</android.support.v4.widget.DrawerLayout>
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="net.quduo.pixel.interfaces.android.activity.MainActivity">
+
+    <include
+        layout="@layout/include_action_menu_main"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/action_bar_height" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_gravity="center|top"
+        android:indeterminateDrawable="@anim/loading_horizontal"
+        android:visibility="gone" />
+
+    <net.quduo.pixel.interfaces.android.widget.FragmentViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation" />
+
+    <LinearLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@drawable/background_toolbar_white"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp">
+
+        <RelativeLayout
+            android:id="@+id/chat_menu_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.0">
+
+            <!--
+            <ImageView
+                android:id="@+id/chat_menu_icon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_launcher" />
+            -->
+
+            <TextView
+                android:id="@+id/chat_menu_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/icon_chat_line"
+                android:textColor="@color/grey_500"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/chat_menu_icon_selected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:alpha="0"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/icon_chat"
+                android:textColor="@color/pink_500"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/chat_menu_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/chat_menu_icon"
+                android:gravity="center"
+                android:text="彩信"
+                android:textColor="@color/grey_500"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/contact_menu_item"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.0">
+
+            <!--
+            <ImageView
+                android:id="@+id/contact_menu_icon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_launcher" />
+            -->
+
+            <TextView
+                android:id="@+id/contact_menu_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/icon_contact_line"
+                android:textColor="@color/grey_500"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/contact_menu_icon_selected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:alpha="0"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/icon_contact"
+                android:textColor="@color/pink_500"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/contact_menu_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contact_menu_icon"
+                android:gravity="center"
+                android:text="通讯录"
+                android:textColor="@color/grey_500"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/discovery_menu_item"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.0">
+
+            <!--
+            <ImageView
+                android:id="@+id/discovery_menu_icon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_launcher" />
+            -->
+
+            <TextView
+                android:id="@+id/discovery_menu_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/icon_discovery_line"
+                android:textColor="@color/grey_500"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/discovery_menu_icon_selected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:alpha="0"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/icon_discovery"
+                android:textColor="@color/pink_500"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/discovery_menu_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/discovery_menu_icon"
+                android:gravity="center"
+                android:text="发现"
+                android:textColor="@color/grey_500"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/nearby_menu_item"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.0">
+
+            <!--
+            <ImageView
+                android:id="@+id/nearby_menu_icon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_launcher" />
+            -->
+
+            <TextView
+                android:id="@+id/nearby_menu_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/icon_nearby_line"
+                android:textColor="@color/grey_500"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/nearby_menu_icon_selected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:alpha="0"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/icon_nearby"
+                android:textColor="@color/pink_500"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/nearby_menu_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nearby_menu_icon"
+                android:gravity="center"
+                android:text="附近"
+                android:textColor="@color/grey_500"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/user_menu_item"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.0">
+
+            <!--
+            <ImageView
+                android:id="@+id/user_menu_icon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_launcher" />
+            -->
+
+            <TextView
+                android:id="@+id/user_menu_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/icon_user_line"
+                android:textColor="@color/grey_500"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/user_menu_icon_selected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:alpha="0"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/icon_user"
+                android:textColor="@color/pink_500"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/user_menu_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_menu_icon"
+                android:gravity="center"
+                android:text="我的"
+                android:textColor="@color/grey_500"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
+
+    <!--
+    <include
+        android:id="@+id/titleLayout"
+        layout="@layout/common_actionbar" />
+    -->
+
+    <!--
+    style="?android:attr/progressBarStyleLarge" 设置ProgressBar为默认风格的进度条
+    style="?android:attr/progressBarStyleSmall" 设置ProgressBar为小圆形进度条
+    style="?android:attr/progressBarStyleLarge" 设置ProgressBar为大圆形进度条
+    style="?android:attr/progressBarStyleHorizontal" //设置ProgressBar为水平进度条
+    Normal
+    android:indeterminate="false" 确定进度条
+    -->
+
+    <!--
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_gravity="center_horizontal"
+        android:indeterminateDrawable="@anim/loading_horizontal"
+        android:visibility="visible" />
+    -->

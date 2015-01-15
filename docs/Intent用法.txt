@@ -1,0 +1,79 @@
+1、应用场景：调用Android自带浏览器访问
+Uri uri = Uri.parse("http://www.cnblogs.com/renqingping");
+Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+intent.setClassName("com.android.browser", "com.android.browser.BrowserActivity");
+startActivity(intent);
+
+添加权限
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+2、应用场景：打电话
+先进入拨号界面
+Uri uri = Uri.parse("tel:"+ "12345678900");
+Intent intent = new Intent(Intent.ACTION_DIAL, uri);
+startActivity(intent);
+
+直接拨打电话
+Uri uri = Uri.parse("tel:" + "12345678900");
+Intent intent = new Intent(Intent.ACTION_CALL, uri);
+startActivity(intent);
+
+先进入通话记录界面
+Intent intent=new Intent();
+intent.setAction(Intent.ACTION_CALL_BUTTON);
+startActivity(intent);
+或者
+Intent intent = new Intent();
+intent.setAction("android.intent.action.CALL_BUTTON");
+startActivity(intent);
+
+先进入联系人界面
+Intent intent = new Intent();
+intent.setAction(Intent.ACTION_VIEW);
+intent.setData(Contacts.CONTENT_URI);
+startActivity(intent);
+
+添加权限
+<uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+
+3、应用场景：发短信
+代码如下：（先进入系统编辑短信界面）
+Uri uri = Uri.parse("smsto:" + "12345678900");
+Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
+intent.putExtra("sms_body", "sms content");
+startActivity(intent);
+
+不调用系统编辑短信界面，直接发送
+public void sendSms(final String phoneNumber, final String content) {
+    new Thread(new Runnable() {
+　　　　public void run() {
+　　　　　　try {
+               SmsManager smsManager = SmsManager.getDefault();
+               List<String> texts = smsManager.divideMessage(content);
+               for (String text : texts) {
+                   smsManager.sendTextMessage(phoneNumber, null, text, null, null);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }).start();
+}
+添加权限
+<uses-permission android:name="android.permission.SEND_SMS"></uses-permission>
+
+4.应用场景：调用google搜索相应内容
+Intent intent = new Intent();
+intent.setAction(Intent.ACTION_WEB_SEARCH);
+intent.putExtra(SearchManager.QUERY, "search keywords");
+startActivity(intent);
+
+5、应用场景：卸载apk
+Uri uri = Uri.fromParts("package", strPackageName, null);
+Intent intent = new Intent(Intent.ACTION_DELETE, uri);
+startActivity(intent);
+
+6、应用场景：安装apk
+Uri uri = Uri.fromParts("package", "com.android.test", null);
+Intent intent = new Intent(Intent.ACTION_PACKAGE_ADDED, uri);
+startActivity(intent);

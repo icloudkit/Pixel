@@ -1,0 +1,13 @@
+1.在res/values目录下新建style.xml文件，其中写入我们自定义的style
+<style name="myTextView" parent="android:Widget.TextView">
+    <item name="android:textSize">15sp</item>
+    <item name="android:textColor">#FFFFFF</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+</style>
+
+2.在xml布局文件中的某个TextView中运用
+<TextView
+	android:text="你好！"
+	style="@style/myTextView"
+/>

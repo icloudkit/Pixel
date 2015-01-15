@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+    填充方式 :android:scaleType, setScaleType(ImageView.ScaleType), 设置图片缩放类型以适配ImageView大小, 即填充方式;
+    可取值 : matrix, fitXY, fitStart, fitCenter, fitEnd, center, centerCrop, centerInside;
+    - matrix : 方法中的常量值为 ImageView.ScaleType.MATRIX, 使用矩阵来进行绘图;
+    - fitXY : 方法中的常量值为 ImageView.ScaleType.FIT_XY, 在x y 两个方向上缩放, 使图片完全填充整个ImageView 不按照长宽比例缩放;
+    - fitStart : 方法中的常量值为 ImageView.ScaleType.FIT_START, 保持长宽比缩放, 直到该图片完全显示在ImageView中, 缩放完成之后该图片在左上角;
+    - fitCenter : 方法中的常量值为 ImageView.ScaleType.FIT_CENTER, 保持长宽比缩放, 直到该图片完全显示在ImageView中, 缩放完成之后该图片位于中央;
+    - fitEnd : 方法中的常量值为 ImageView.ScaleType.FIT_END, 保持长宽比缩放, 直到该图片完全显示在ImageView中, 缩放完成之后该图片位于右下角;
+    - center : 方法中的常量值为 ImageView.ScaleType.CENTER, 将图片放在ImageView的中央, 不进行缩放;
+    - centerCrop : 方法中的常量值为 ImageView.ScaleType.CENTER_CROP, 保持长宽比缩放, 使图片完全覆盖ImageView;
+    - centerInside : 方法中的常量值为 ImageView.ScaleType.CENTER_INSIDE, 保持长宽比缩放, 使的ImageView完全显示图片;
+    -->
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/guide_item_01"
+        android:contentDescription="@null" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/imageView1"
+        android:layout_gravity="bottom"
+        android:background="@color/light_transparent_black"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/guide_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="78dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="分享、畅聊、欢笑"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</RelativeLayout>

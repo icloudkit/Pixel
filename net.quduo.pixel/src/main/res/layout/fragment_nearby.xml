@@ -1,0 +1,276 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="net.quduo.pixel.interfaces.android.fragment.NearbyFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <!--
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <net.quduo.pixel.interfaces.android.widget.CircularImageView
+            android:layout_width="54.0dp"
+            android:layout_height="54.0dp"
+            android:src="@drawable/default_avatar_04" />
+
+
+        <net.quduo.pixel.interfaces.android.widget.RoundedCornersImageView
+            android:layout_width="54.0dp"
+            android:layout_height="54.0dp"
+            android:src="@drawable/default_avatar_04"
+            app:cornerRadius="3dp" />
+
+    </LinearLayout>
+    -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2.0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="1.0"
+                    android:background="@color/blue_700">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:src="@drawable/icon_photo" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginBottom="2dp"
+                            android:text="相册"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                </net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout>
+
+                <net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="1.0"
+                    android:background="@color/light_blue_500">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:src="@drawable/icon_favorite" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginBottom="2dp"
+                            android:text="收藏夹"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                </net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout>
+            </LinearLayout>
+
+            <net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2.0dp"
+                android:layout_weight="1.0"
+                android:background="@color/indigo_300">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/icon_friends" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="朋友"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+            </net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout>
+        </LinearLayout>
+
+        <!-- ################################### -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2.0dp"
+                android:layout_weight="1"
+                android:background="@color/deep_purple_300">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/icon_game" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="作业"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+            </net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2.0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="1.0"
+                    android:background="@color/red_500">
+
+                </net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="1.0"
+                    android:orientation="horizontal">
+
+                    <net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1.0"
+                        android:background="@color/red_300">
+
+                    </net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout>
+
+                    <net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:layout_weight="1.0"
+                        android:background="@color/orange_500">
+
+                    </net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ################################### -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="2.0dp"
+                android:layout_weight="1.0"
+                android:background="@color/light_green_500">
+
+            </net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout>
+
+            <net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="2.0dp"
+                android:layout_weight="1.0"
+                android:background="@color/orange_400">
+
+            </net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout>
+
+        </LinearLayout>
+
+        <!-- ################################### -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="2.0dp"
+                android:layout_weight="1.0"
+                android:background="@color/light_green_700">
+
+            </net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout>
+
+            <net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="2.0dp"
+                android:layout_weight="1.0"
+                android:background="@color/green_500">
+
+            </net.quduo.pixel.interfaces.android.widget.TouchRelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

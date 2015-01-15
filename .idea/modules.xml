@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Pixel.iml" filepath="$PROJECT_DIR$/Pixel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.android.volley/com.android.volley.iml" filepath="$PROJECT_DIR$/com.android.volley/com.android.volley.iml" />
+      <module fileurl="file://$PROJECT_DIR$/net.quduo.example/net.quduo.example.iml" filepath="$PROJECT_DIR$/net.quduo.example/net.quduo.example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/net.quduo.pixel/net.quduo.pixel.iml" filepath="$PROJECT_DIR$/net.quduo.pixel/net.quduo.pixel.iml" />
+    </modules>
+  </component>
+</project>
+

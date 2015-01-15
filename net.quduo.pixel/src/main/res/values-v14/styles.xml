@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+    <style name="Theme.Example" parent="@style/Theme.AppCompat.Light">
+        <item name="android:actionBarItemBackground">@drawable/selectable_background_example</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu.Example</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Example</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarTabStyle.Example</item>
+        <item name="android:actionDropDownStyle">@style/DropDownNav.Example</item>
+        <item name="android:actionBarStyle">@style/ActionBar.Solid.Example</item>
+        <item name="android:actionModeBackground">@drawable/cab_background_top_example</item>
+        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_example</item>
+        <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Example</item>
+    </style>
+
+    <style name="ActionBar.Solid.Example" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
+        <item name="android:background">@drawable/ab_solid_example</item>
+        <item name="android:backgroundStacked">@drawable/ab_stacked_solid_example</item>
+        <item name="android:backgroundSplit">@drawable/ab_bottom_solid_example</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.Example</item>
+    </style>
+
+    <style name="ActionBar.Transparent.Example" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="android:background">@drawable/ab_transparent_example</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.Example</item>
+    </style>
+
+    <!- this style is only referenced in a Light.DarkActionBar based theme ->
+    <style name="Theme.Example.Widget" parent="@style/Theme.AppCompat">
+        <item name="android:popupMenuStyle">@style/PopupMenu.Example</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Example</item>
+    </style>
+    -->
+
+    <!--
+      Base application theme for API 14+. This theme completely replaces
+      AppBaseTheme from res/values/styles.xml on API 14+ devices.
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        <!-- API 14 theme customizations can go here. -->
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!--
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        -->
+
+        <!-- Customize your theme here. -->
+        <item name="android:actionBarSize">@dimen/action_bar_height</item>
+        <!-- 去除阴影 -->
+        <item name="android:windowContentOverlay">@null</item>
+
+        <item name="android:actionBarStyle">@style/AppTheme.Actionbar</item>
+
+        <item name="android:actionModeStyle">@style/AppTheme.ActionMode</item>
+        <!-- <item name="android:actionModeCloseDrawable">@drawable/ic_launcher</item> -->
+        <item name="android:actionModeBackground">@color/green</item>
+        <!-- ActionMode右边的按钮是一个特殊的CloseButton，分割线与CloseButton的Style有关,删除ActionMode的Divider-->
+        <item name="android:actionModeCloseButtonStyle">@null</item>
+
+        <!-- Support library compatibility -->
+        <item name="actionBarSize">@dimen/action_bar_height</item>
+        <item name="actionBarStyle">@style/AppTheme.Actionbar</item>
+
+    </style>
+
+    <style name="AppTheme.Actionbar" parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:actionMenuTextColor">@color/white</item>
+
+        <item name="android:background">@color/grey_900</item>
+
+        <!-- Support library compatibility -->
+        <item name="background">@color/grey_900</item>
+        <!--
+        <item name="backgroundStacked">@drawable/actionbar_background</item>
+        <item name="backgroundSplit">@drawable/actionbar_background</item>
+        -->
+        <item name="actionMenuTextColor">@color/white</item>
+    </style>
+
+    <!--
+    Widget.AppCompat.ActionMode
+    Widget.AppCompat.Light.ActionMode.Inverse
+    -->
+    <style name="AppTheme.ActionMode" parent="Widget.AppCompat.ActionMode">
+        <!--
+        <item name="titleTextStyle">@style/TextAppearance.AppCompat.Widget.ActionMode.Title</item>
+        <item name="subtitleTextStyle">@style/TextAppearance.AppCompat.Widget.ActionMode.Subtitle</item>
+        -->
+        <item name="android:height">?actionBarSize</item>
+        <item name="android:background">@color/green</item>
+        <item name="android:titleTextStyle">@style/AppTheme.TitleText</item>
+        <item name="android:subtitleTextStyle">@style/AppTheme.SubTitleText</item>
+    </style>
+
+    <style name="AppTheme.TitleText">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AppTheme.SubTitleText">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+</resources>

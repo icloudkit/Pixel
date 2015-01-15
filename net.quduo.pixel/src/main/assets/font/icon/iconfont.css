@@ -1,0 +1,78 @@
+
+@font-face {font-family: "pixel";
+  src: url('iconfont.eot'); /* IE9*/
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff') format('woff'), /* chrome、firefox */
+  url('iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.pixel {
+  font-family:"pixel" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-daoxiang:before { content: "\e619"; }
+
+.icon-shuaxin:before { content: "\e61a"; }
+
+.icon-shuaxin1:before { content: "\e61b"; }
+
+.icon-icon_font:before { content: "\e61c"; }
+
+.icon-icon_arrow_down:before { content: "\e60a"; }
+
+.icon-icon_arrow_left:before { content: "\e60b"; }
+
+.icon-icon_arrow_right:before { content: "\e60c"; }
+
+.icon-icon_arrow_up:before { content: "\e60d"; }
+
+.icon-icon_chat_line:before { content: "\e600"; }
+
+.icon-icon_chat:before { content: "\e601"; }
+
+.icon-icon_clean:before { content: "\e613"; }
+
+.icon-icon_contact_line:before { content: "\e602"; }
+
+.icon-icon_contact:before { content: "\e603"; }
+
+.icon-icon_discovery_line:before { content: "\e604"; }
+
+.icon-icon_discovery:before { content: "\e605"; }
+
+.icon-icon_logo:before { content: "\e615"; }
+
+.icon-icon_nearby_line:before { content: "\e606"; }
+
+.icon-icon_nearby:before { content: "\e607"; }
+
+.icon-icon_search:before { content: "\e60f"; }
+
+.icon-icon_user_line:before { content: "\e608"; }
+
+.icon-icon_user:before { content: "\e609"; }
+
+.icon-icon_camera:before { content: "\e617"; }
+
+.icon-icon_scan:before { content: "\e612"; }
+
+.icon-icon_voice:before { content: "\e614"; }
+
+.icon-icon_plus_more:before { content: "\e60e"; }
+
+.icon-icon_chat_add_group:before { content: "\e616"; }
+
+.icon-icon_mail:before { content: "\e611"; }
+
+.icon-icon_friend_add:before { content: "\e610"; }
+
+.icon-icon_help_line_circle:before { content: "\e618"; }
+
+.icon-icon_eye_view:before { content: "\e61d"; }
+

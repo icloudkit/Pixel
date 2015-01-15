@@ -1,0 +1,129 @@
+步骤一：准备工作，确定文件的位置，并将程序不可直接操作的文件转换成字符流的形式（这一步和上边吸烟实例的第一步没有什么差别，只是进行一些简单的准备工作）。
+
+String inFile = "C:\\wk.txt";
+String outFile = "C:\\wk-bak.txt";
+FileInputStream inf = new FileInputStream(inFile);
+FileOutputStream outf = new FileOutputStream(outFile);
+ByteBuffer buffer = ByteBuffer.allocate(1024);
+
+步骤二：创建文件输入管道，和文件输出管道。（这一步与上边吸烟的第二部稍有差别，因为Channel和Buffer是在读写的时候才发生的"连接"动作）
+
+//准备文件读取的管道-->相当于烟仓和烟管FileChannel inFc = inf.getChannel();
+FileChannel outFc = outf.getChannel();
+Charset charSet = Charset.forName("utf-8");
+//进行编码解码-->相当于水斗中水的过滤作用
+CharsetDecoder decoder = charSet.newDecoder();
+CharsetEncoder encoder = charSet.newEncoder();
+步骤三：开始进行文件备份工作。
+
+ while(true) {
+ //准备向Buffer中写入数据-->相当于点燃烟丝，完事具备只欠东风
+       buffer.clear();
+//进行字符编码 -->相当于水的过滤作用
+       CharBuffer cb = decoder.decode(buffer);
+       ByteBuffer bb = encoder.encode(cb);
+
+//数据经过编码以后暂存缓冲区-->相当于经过水过滤后的烟暂停在水斗中
+            int t = inFc.read(bb);
+            if(t == -1) {
+                break;
+            }
+                        bb.flip();
+                        //将字节码写入目标文件-->相当于烟已经进入到嘴里
+            outFc.write(bb);
+        }
+步骤四：检查文件是否备份成功。发现C盘下面多了一个wk-bak.txt的文件，内容与wk.txt一摸一样。接下来享受java带给你的快感....
+
+
+
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
+
+public class TestNio {
+
+
+    public static void main(String args[]) throws Exception{
+
+    //String infile = "D:\\workspace\\test\\usagetracking.log";
+    //FileInputStream fin= new FileInputStream(infile);
+    //FileChannel fcin = fin.getChannel();
+
+    int bufSize = 100;
+    File fin = new File("D:\\workspace\\test\\usagetracking.log");
+    File fout = new File("D:\\workspace\\test\\usagetracking2.log");
+
+    FileChannel fcin = new RandomAccessFile(fin, "r").getChannel();
+    ByteBuffer rBuffer = ByteBuffer.allocate(bufSize);
+
+    FileChannel fcout = new RandomAccessFile(fout, "rws").getChannel();
+    ByteBuffer wBuffer = ByteBuffer.allocateDirect(bufSize);
+
+
+    readFileByLine(bufSize, fcin, rBuffer, fcout, wBuffer);
+
+    System.out.print("OK!!!");
+    }
+
+    public static void readFileByLine(int bufSize, FileChannel fcin, ByteBuffer rBuffer, FileChannel fcout, ByteBuffer wBuffer){
+        String enterStr = "\n";
+        try{
+        byte[] bs = new byte[bufSize];
+
+        int size = 0;
+        StringBuffer strBuf = new StringBuffer("");
+        //while((size = fcin.read(buffer)) != -1){
+        while(fcin.read(rBuffer) != -1){
+              int rSize = rBuffer.position();
+              rBuffer.rewind();
+              rBuffer.get(bs);
+              rBuffer.clear();
+              String tempString = new String(bs, 0, rSize);
+              //System.out.print(tempString);
+              //System.out.print("<200>");
+
+              int fromIndex = 0;
+              int endIndex = 0;
+              while((endIndex = tempString.indexOf(enterStr, fromIndex)) != -1){
+               String line = tempString.substring(fromIndex, endIndex);
+               line = new String(strBuf.toString() + line);
+               //System.out.print(line);
+               //System.out.print("</over/>");
+               //write to anthone file
+               writeFileByLine(fcout, wBuffer, line);
+
+
+               strBuf.delete(0, strBuf.length());
+               fromIndex = endIndex + 1;
+              }
+              if(rSize > tempString.length()){
+              strBuf.append(tempString.substring(fromIndex, tempString.length()));
+              }else{
+              strBuf.append(tempString.substring(fromIndex, rSize));
+              }
+        }
+        } catch (IOException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+        }
+    }
+
+    public static void writeFileByLine(FileChannel fcout, ByteBuffer wBuffer, String line){
+        try {
+            //write on file head
+            //fcout.write(wBuffer.wrap(line.getBytes()));
+            //wirte append file on foot
+            fcout.write(wBuffer.wrap(line.getBytes()), fcout.size());
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+}

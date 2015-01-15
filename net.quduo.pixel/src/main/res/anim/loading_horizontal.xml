@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    根标签为animation-list，其中oneshot代表着是否只展示一遍，设置为false会不停的循环播放动画
+    根标签下，通过item标签对动画中的每一个图片进行声明 android:duration 表示展示所用的该图片的时间长度
+ -->
+<animation-list android:oneshot="false" xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="50" android:drawable="@drawable/loading_horizontal_1" />
+    <item android:duration="50" android:drawable="@drawable/loading_horizontal_2" />
+    <item android:duration="50" android:drawable="@drawable/loading_horizontal_3" />
+    <item android:duration="50" android:drawable="@drawable/loading_horizontal_4" />
+    <item android:duration="50" android:drawable="@drawable/loading_horizontal_5" />
+    <item android:duration="50" android:drawable="@drawable/loading_horizontal_6" />
+    <item android:duration="50" android:drawable="@drawable/loading_horizontal_7" />
+    <item android:duration="50" android:drawable="@drawable/loading_horizontal_8" />
+</animation-list>
