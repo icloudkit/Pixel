@@ -16,8 +16,8 @@
 
 package net.quduo.pixel.interfaces.android.fragment;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -33,13 +33,11 @@ import android.widget.TextView;
 
 import net.quduo.pixel.BuildConfig;
 import net.quduo.pixel.R;
+import net.quduo.pixel.interfaces.android.activity.ChatFormActivity;
 import net.quduo.pixel.interfaces.android.common.ChatListAdapter;
 import net.quduo.pixel.interfaces.android.model.ChatListDataModel;
-import net.quduo.pixel.interfaces.android.widget.DragDropListView;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -111,20 +109,25 @@ public class ChatFragment extends Fragment {
 
         mChatListAdapter = new ChatListAdapter(this.getActivity(), mSourceDataList);
         mChatListView.setAdapter(mChatListAdapter);
-
-
         mChatListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Log.e(TAG, mSourceDataList.get(i).getChatTitle());
+                if (DEBUG) Log.d(TAG, mSourceDataList.get(i).getChatTitle());
+
+                Intent intent = new Intent(getActivity(), ChatFormActivity.class);
+                getActivity().startActivity(intent);
+                getActivity().finish();
+                // 设置切换动画
+                getActivity().overridePendingTransition(R.anim.activity_open_enter, R.anim.activity_close_exit);
+
             }
         });
         mChatListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View v, int i, long l) {
-                Log.e(TAG, mSourceDataList.get(i).getChatTitle());
+                if (DEBUG) Log.d(TAG, mSourceDataList.get(i).getChatTitle());
 
                 // 引入窗口配置文件 
                 View contextMenuView = inflater.inflate(R.layout.layout_common_context_menu, null);

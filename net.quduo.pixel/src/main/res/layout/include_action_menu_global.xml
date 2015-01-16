@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/back_action_item"
-        android:layout_width="38dp"
+        android:layout_width="48dp"
         android:layout_height="@dimen/action_bar_height"
         android:layout_gravity="center_vertical"
         android:background="@drawable/selector_action_menu_item"
@@ -56,6 +56,17 @@
         android:layout_gravity="center_vertical"
         android:background="@drawable/selector_action_menu_item"
         android:text="@string/icon_help"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/user_info_action_item"
+        android:layout_width="@dimen/action_bar_height"
+        android:layout_height="@dimen/action_bar_height"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/selector_action_menu_item"
+        android:text="@string/icon_user_info"
         android:textColor="@color/white"
         android:textSize="26sp"
         android:visibility="gone" />

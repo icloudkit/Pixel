@@ -16,13 +16,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-daoxiang:before { content: "\e619"; }
-
-.icon-shuaxin:before { content: "\e61a"; }
-
-.icon-shuaxin1:before { content: "\e61b"; }
-
-.icon-icon_font:before { content: "\e61c"; }
+.icon-icon_user:before { content: "\e61e"; }
 
 .icon-icon_arrow_down:before { content: "\e60a"; }
 
@@ -56,7 +50,7 @@
 
 .icon-icon_user_line:before { content: "\e608"; }
 
-.icon-icon_user:before { content: "\e609"; }
+.icon-icon_user1:before { content: "\e609"; }
 
 .icon-icon_camera:before { content: "\e617"; }
 

@@ -21,7 +21,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.InputType;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -62,10 +64,11 @@ public class LoginActivity extends Activity {
     private LinearLayout mMobileAreaLayout;
     private EditText mMobileEditText;
     private ImageView mMobileEditTextLine;
-    private TextView mCleanActionIcon;
+    private TextView mMobileCleanActionIcon;
     private LinearLayout mUsernameAreaLayout;
     private EditText mUsernameEditText;
     private ImageView mUsernameEditTextLine;
+    private TextView mUsernameCleanActionIcon;
     // private LinearLayout mPasswordAreaLayout;
     private EditText mPasswordEditText;
     private ImageView mPasswordEditTextLine;
@@ -147,10 +150,10 @@ public class LoginActivity extends Activity {
         mCountryRegionEditTextLine = (ImageView) findViewById(R.id.country_region_edit_text_line);
         mMobileAreaLayout = (LinearLayout) findViewById(R.id.mobile_area_layout);
         mMobileEditText = (EditText) findViewById(R.id.mobile_edit_text);
-        mCleanActionIcon = (TextView) findViewById(R.id.clean_action_icon);
-        mCleanActionIcon.setTypeface(typeface);
-        mMobileEditText.addTextChangedListener(new MobileTextWatcher(mMobileEditText, mCleanActionIcon));
-        mCleanActionIcon.setOnClickListener(new View.OnClickListener() {
+        mMobileCleanActionIcon = (TextView) findViewById(R.id.mobile_clean_action_icon);
+        mMobileCleanActionIcon.setTypeface(typeface);
+        mMobileEditText.addTextChangedListener(new MobileTextWatcher(mMobileEditText, mMobileCleanActionIcon));
+        mMobileCleanActionIcon.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -187,7 +190,36 @@ public class LoginActivity extends Activity {
                 }
             }
         });
+        mUsernameEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(mUsernameEditText.getText().length() > 0) {
+                    mUsernameCleanActionIcon.setVisibility(View.VISIBLE);
+                } else {
+                    mUsernameCleanActionIcon.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
         mUsernameEditTextLine = (ImageView) findViewById(R.id.username_edit_text_line);
+        mUsernameCleanActionIcon = (TextView) findViewById(R.id.username_clean_action_icon);
+        mUsernameCleanActionIcon.setTypeface(typeface);
+        mUsernameCleanActionIcon.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                mUsernameEditText.setText("");
+            }
+        });
         // mPasswordAreaLayout = (LinearLayout) findViewById(R.id.password_area_layout);
         mPasswordEditText = (EditText) findViewById(R.id.password_edit_text);
         mPasswordEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -257,14 +289,14 @@ public class LoginActivity extends Activity {
                 if (mCountryRegionAreaLayout.getVisibility() == View.GONE) {
                     mCountryRegionAreaLayout.setVisibility(View.VISIBLE);
                     mMobileAreaLayout.setVisibility(View.VISIBLE);
-                    mMobileAreaLayout.requestFocus();
+                    mMobileEditText.requestFocus();
                     mUsernameAreaLayout.setVisibility(View.GONE);
                     mActionTitle.setText("使用手机号登录");
                 } else {
                     mCountryRegionAreaLayout.setVisibility(View.GONE);
                     mMobileAreaLayout.setVisibility(View.GONE);
                     mUsernameAreaLayout.setVisibility(View.VISIBLE);
-                    mUsernameAreaLayout.requestFocus();
+                    mUsernameEditText.requestFocus();
                     mActionTitle.setText("登录彩信");
                 }
             }

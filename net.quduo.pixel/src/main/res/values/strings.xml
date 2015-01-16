@@ -66,6 +66,7 @@
     <string name="icon_mail"></string>
     <string name="icon_help">&#xe618;</string>
     <string name="icon_eye_view">&#xe61d;</string>
+    <string name="icon_user_info">&#xe61e;</string>
 
     <string-array name="country_code">
         <item>93,AF</item>

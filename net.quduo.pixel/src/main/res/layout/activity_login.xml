@@ -121,7 +121,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/clean_action_icon"
+                android:id="@+id/mobile_clean_action_icon"
                 android:layout_width="32.0dp"
                 android:layout_height="32.0dp"
                 android:layout_alignParentRight="true"
@@ -187,6 +187,20 @@
                 android:singleLine="true"
                 android:textColorHint="@color/grey_300"
                 android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/username_clean_action_icon"
+                android:layout_width="32.0dp"
+                android:layout_height="32.0dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/icon_clean"
+                android:textColor="@color/grey_500"
+                android:textSize="20sp"
+                android:visibility="gone" />
 
             <ImageView
                 android:id="@+id/username_edit_text_line"

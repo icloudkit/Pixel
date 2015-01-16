@@ -148,9 +148,9 @@ public class MainActivity extends FragmentActivity implements ViewPager.OnPageCh
                 case R.id.search_action_item:
                     Intent intent = new Intent(MainActivity.this, SearchActivity.class);
                     MainActivity.this.startActivity(intent);
+                    MainActivity.this.finish();
                     // 设置切换动画
                     overridePendingTransition(R.anim.activity_open_enter, R.anim.activity_close_exit);
-                    MainActivity.this.finish();
                     break;
                 case R.id.plus_action_item:
                     /*
