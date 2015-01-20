@@ -50,6 +50,17 @@
         android:visibility="gone" />
 
     <Button
+        android:id="@+id/plus_action_item"
+        android:layout_width="@dimen/action_bar_height"
+        android:layout_height="@dimen/action_bar_height"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/selector_action_menu_item"
+        android:text="@string/icon_plus_more"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:visibility="gone"/>
+
+    <Button
         android:id="@+id/help_action_item"
         android:layout_width="@dimen/action_bar_height"
         android:layout_height="@dimen/action_bar_height"

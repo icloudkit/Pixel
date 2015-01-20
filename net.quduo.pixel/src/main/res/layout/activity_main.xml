@@ -33,7 +33,24 @@
 
 </android.support.v4.widget.DrawerLayout>
 -->
+<!--
+style="?android:attr/progressBarStyleLarge" 设置ProgressBar为默认风格的进度条
+style="?android:attr/progressBarStyleSmall" 设置ProgressBar为小圆形进度条
+style="?android:attr/progressBarStyleLarge" 设置ProgressBar为大圆形进度条
+style="?android:attr/progressBarStyleHorizontal" //设置ProgressBar为水平进度条
+Normal
+android:indeterminate="false" 确定进度条
+-->
 
+<!--
+<ProgressBar
+    android:id="@+id/progressBar"
+    android:layout_width="match_parent"
+    android:layout_height="2dp"
+    android:layout_gravity="center_horizontal"
+    android:indeterminateDrawable="@anim/loading_horizontal"
+    android:visibility="visible" />
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -42,7 +59,7 @@
     tools:context="net.quduo.pixel.interfaces.android.activity.MainActivity">
 
     <include
-        layout="@layout/include_action_menu_main"
+        layout="@layout/include_actionbar_global"
         android:layout_width="match_parent"
         android:layout_height="@dimen/action_bar_height" />
 
@@ -62,287 +79,11 @@
         android:flipInterval="30"
         android:persistentDrawingCache="animation" />
 
-    <LinearLayout
-        android:id="@+id/toolbar_layout"
+    <include
+        layout="@layout/include_toolbar_global"
         android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
-        android:background="@drawable/background_toolbar_white"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:paddingBottom="4dp"
-        android:paddingTop="4dp">
-
-        <RelativeLayout
-            android:id="@+id/chat_menu_item"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1.0">
-
-            <!--
-            <ImageView
-                android:id="@+id/chat_menu_icon"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_centerHorizontal="true"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_launcher" />
-            -->
-
-            <TextView
-                android:id="@+id/chat_menu_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="@string/icon_chat_line"
-                android:textColor="@color/grey_500"
-                android:textSize="30dp" />
-
-            <TextView
-                android:id="@+id/chat_menu_icon_selected"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:alpha="0"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="@string/icon_chat"
-                android:textColor="@color/pink_500"
-                android:textSize="30dp" />
-
-            <TextView
-                android:id="@+id/chat_menu_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/chat_menu_icon"
-                android:gravity="center"
-                android:text="彩信"
-                android:textColor="@color/grey_500"
-                android:textSize="12sp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/contact_menu_item"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1.0">
-
-            <!--
-            <ImageView
-                android:id="@+id/contact_menu_icon"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_centerHorizontal="true"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_launcher" />
-            -->
-
-            <TextView
-                android:id="@+id/contact_menu_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="@string/icon_contact_line"
-                android:textColor="@color/grey_500"
-                android:textSize="30dp" />
-
-            <TextView
-                android:id="@+id/contact_menu_icon_selected"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:alpha="0"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="@string/icon_contact"
-                android:textColor="@color/pink_500"
-                android:textSize="30dp" />
-
-            <TextView
-                android:id="@+id/contact_menu_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/contact_menu_icon"
-                android:gravity="center"
-                android:text="通讯录"
-                android:textColor="@color/grey_500"
-                android:textSize="12sp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/discovery_menu_item"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1.0">
-
-            <!--
-            <ImageView
-                android:id="@+id/discovery_menu_icon"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_centerHorizontal="true"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_launcher" />
-            -->
-
-            <TextView
-                android:id="@+id/discovery_menu_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="@string/icon_discovery_line"
-                android:textColor="@color/grey_500"
-                android:textSize="30dp" />
-
-            <TextView
-                android:id="@+id/discovery_menu_icon_selected"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:alpha="0"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="@string/icon_discovery"
-                android:textColor="@color/pink_500"
-                android:textSize="30dp" />
-
-            <TextView
-                android:id="@+id/discovery_menu_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/discovery_menu_icon"
-                android:gravity="center"
-                android:text="发现"
-                android:textColor="@color/grey_500"
-                android:textSize="12sp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/nearby_menu_item"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1.0">
-
-            <!--
-            <ImageView
-                android:id="@+id/nearby_menu_icon"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_centerHorizontal="true"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_launcher" />
-            -->
-
-            <TextView
-                android:id="@+id/nearby_menu_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="@string/icon_nearby_line"
-                android:textColor="@color/grey_500"
-                android:textSize="30dp" />
-
-            <TextView
-                android:id="@+id/nearby_menu_icon_selected"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:alpha="0"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="@string/icon_nearby"
-                android:textColor="@color/pink_500"
-                android:textSize="30dp" />
-
-            <TextView
-                android:id="@+id/nearby_menu_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/nearby_menu_icon"
-                android:gravity="center"
-                android:text="附近"
-                android:textColor="@color/grey_500"
-                android:textSize="12sp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/user_menu_item"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1.0">
-
-            <!--
-            <ImageView
-                android:id="@+id/user_menu_icon"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_centerHorizontal="true"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_launcher" />
-            -->
-
-            <TextView
-                android:id="@+id/user_menu_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="@string/icon_user_line"
-                android:textColor="@color/grey_500"
-                android:textSize="30dp" />
-
-            <TextView
-                android:id="@+id/user_menu_icon_selected"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:alpha="0"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="@string/icon_user"
-                android:textColor="@color/pink_500"
-                android:textSize="30dp" />
-
-            <TextView
-                android:id="@+id/user_menu_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/user_menu_icon"
-                android:gravity="center"
-                android:text="我的"
-                android:textColor="@color/grey_500"
-                android:textSize="12sp" />
-        </RelativeLayout>
-    </LinearLayout>
+        android:layout_height="54dp" />
 
 </LinearLayout>
 
-    <!--
-    <include
-        android:id="@+id/titleLayout"
-        layout="@layout/common_actionbar" />
-    -->
 
-    <!--
-    style="?android:attr/progressBarStyleLarge" 设置ProgressBar为默认风格的进度条
-    style="?android:attr/progressBarStyleSmall" 设置ProgressBar为小圆形进度条
-    style="?android:attr/progressBarStyleLarge" 设置ProgressBar为大圆形进度条
-    style="?android:attr/progressBarStyleHorizontal" //设置ProgressBar为水平进度条
-    Normal
-    android:indeterminate="false" 确定进度条
-    -->
-
-    <!--
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_gravity="center_horizontal"
-        android:indeterminateDrawable="@anim/loading_horizontal"
-        android:visibility="visible" />
-    -->

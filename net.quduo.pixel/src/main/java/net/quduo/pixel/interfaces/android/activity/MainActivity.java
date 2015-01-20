@@ -40,6 +40,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
@@ -94,6 +95,7 @@ public class MainActivity extends FragmentActivity implements ViewPager.OnPageCh
 
     // private ActionBar mActionBar;
 
+    private TextView mActionTitle;
     private Button mSearchActionitem, mPlusActionItem;
     private ArrayList<HashMap<String, Object>> mPopupWindowListItem;
 
@@ -570,14 +572,21 @@ public class MainActivity extends FragmentActivity implements ViewPager.OnPageCh
         typeface = Typeface.createFromAsset(getAssets(), "font/icon/iconfont.ttf");
 
         // 顶部 Action 菜单
+        mActionTitle = (TextView) findViewById(R.id.action_title);
+        mActionTitle.setVisibility(View.VISIBLE);
+        mActionTitle.setText("彩信(18)");
+        mActionTitle.setPadding(8, 0, 0, 0);
+
         // mSearchActionitem = (Button) mActionBar.getCustomView().findViewById(R.id.search_action_item);
         mSearchActionitem = (Button) findViewById(R.id.search_action_item);
+        mSearchActionitem.setTypeface(typeface);
+        mSearchActionitem.setVisibility(View.VISIBLE);
         mSearchActionitem.setOnClickListener(mOnClickListener);
         // mPlusActionItem = (Button) mActionBar.getCustomView().findViewById(R.id.plus_action_item);
         mPlusActionItem = (Button) findViewById(R.id.plus_action_item);
-        mPlusActionItem.setOnClickListener(mOnClickListener);
-        mSearchActionitem.setTypeface(typeface);
         mPlusActionItem.setTypeface(typeface);
+        mPlusActionItem.setVisibility(View.VISIBLE);
+        mPlusActionItem.setOnClickListener(mOnClickListener);
 
         mChatMenuItem = (RelativeLayout) findViewById(R.id.chat_menu_item);
         mContactMenuItem = (RelativeLayout) findViewById(R.id.contact_menu_item);

@@ -5,7 +5,7 @@
     tools:context="net.quduo.pixel.interfaces.android.activity.CountryRegionActivity">
 
     <include
-        layout="@layout/include_action_menu_global"
+        layout="@layout/include_actionbar_global"
         android:layout_width="match_parent"
         android:layout_height="@dimen/action_bar_height" />
 

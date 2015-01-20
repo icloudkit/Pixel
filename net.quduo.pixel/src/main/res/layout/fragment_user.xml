@@ -102,6 +102,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_box_white"
                 android:orientation="horizontal"
+                android:layout_marginBottom="8dp"
                 android:paddingBottom="1px"
                 android:paddingTop="1px">
 

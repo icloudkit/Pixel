@@ -44,6 +44,7 @@ public abstract class MaskedImageView extends ImageView {
 
     public abstract Bitmap createMask();
 
+    @Override
     protected void onDraw(Canvas paramCanvas) {
         Drawable localDrawable = getDrawable();
         if (localDrawable == null)

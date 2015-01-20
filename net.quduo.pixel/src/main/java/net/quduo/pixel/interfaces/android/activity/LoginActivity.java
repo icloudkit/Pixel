@@ -17,8 +17,11 @@
 package net.quduo.pixel.interfaces.android.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
@@ -28,6 +31,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -38,6 +42,7 @@ import net.quduo.pixel.BuildConfig;
 import net.quduo.pixel.R;
 import net.quduo.pixel.interfaces.android.common.CommonConstant;
 import net.quduo.pixel.interfaces.android.common.MobileTextWatcher;
+import net.quduo.pixel.interfaces.android.common.SharedPreferencesHelper;
 import net.quduo.pixel.interfaces.android.model.CountryRegionDataModel;
 
 /**
@@ -49,8 +54,11 @@ import net.quduo.pixel.interfaces.android.model.CountryRegionDataModel;
 public class LoginActivity extends Activity {
 
     private static final String TAG = LoginActivity.class.getName();
-
     private static final boolean DEBUG = BuildConfig.DEBUG;
+
+    private SharedPreferences preferences;
+
+    private LinearLayout mLoginLayout;
 
     private Button mBackActionItem;
     private ImageView mBackActionDivider;
@@ -84,7 +92,10 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        preferences = SharedPreferencesHelper.getSharedPreferences(this);
         Typeface typeface = Typeface.createFromAsset(getAssets(), "font/icon/iconfont.ttf");
+
+        mLoginLayout = (LinearLayout) findViewById(R.id.login_layout);
 
         mBackActionItem = (Button) findViewById(R.id.back_action_item);
         mBackActionItem.setVisibility(View.VISIBLE);
@@ -303,6 +314,126 @@ public class LoginActivity extends Activity {
         });
 
         // 130 150 170
+
+
+        // KeyboardView keyboardView = new KeyboardView(getApplicationContext(), null);
+        // int height = (keyboardView.getKeyboard()).getHeight();
+        // Toast.makeText(getApplicationContext(), height+"", Toast.LENGTH_LONG).show();
+        // Log.e(TAG, height + "----------------------");
+
+        /*
+        ViewTreeObserver vto = homelayout.getViewTreeObserver();
+        vto.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+                 @Override
+                 public boolean onPreDraw() {
+                     if (hasMeasured == false) {
+
+                     }
+                     return true;
+                 }
+             }
+
+        );
+        */
+        mLoginLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+
+            @Override
+            public void onGlobalLayout () {
+                // TODO Auto-generated method stub
+                Rect r = new Rect();
+                getWindow().getDecorView().getWindowVisibleDisplayFrame(r);
+
+                int screenHeight = getWindow().getDecorView().getRootView().getHeight();
+                int heightDifference = screenHeight - (r.bottom - r.top);
+                // Log.e("Keyboard Size", "Size1: " + heightDifference);
+                int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+                if (resourceId > 0) {
+                    heightDifference -= getResources().getDimensionPixelSize(resourceId);
+                }
+                // Log.e("Keyboard Size", "Size2: " + heightDifference);
+                if(heightDifference > 0) {
+                    // LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mMoreInputTypeLayout.getLayoutParams();
+                    // mMoreInputTypeLayout.setLayoutParams(params);
+
+                    // 保存键盘高度
+                    preferences.edit().putInt(SharedPreferencesHelper.KEYBOARD_HEIGHT_KEY, heightDifference).commit();
+                }
+
+                /*
+                if (keyBoardHeight <= 100) {
+                    Rect r = new Rect();
+                    content.getWindowVisibleDisplayFrame(r);
+
+                    int screenHeight = content.getRootView().getHeight();
+                    int heightDifference = screenHeight - (r.bottom - r.top);
+                    int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+                    if (resourceId > 0) {
+                        heightDifference -= getResources().getDimensionPixelSize(resourceId);
+                    }
+                    if (heightDifference > 100) {
+                        keyBoardHeight = heightDifference;
+                    }
+                    Log.d("Keyboard Size", "Size: " + heightDifference);
+                }
+                */
+
+                // boolean visible = heightDiff > screenHeight / 3;
+            }
+        });
+
+        /*
+        final int softkeyboard_height = 0;
+        Thread t = new Thread() {
+            public void run() {
+                int y = mainScreenView.getHeight() - 2;
+                int x = 10;
+                int counter = 0;
+                int height = y;
+                while (true) {
+                    final MotionEvent m = MotionEvent.obtain(
+                            SystemClock.uptimeMillis(),
+                            SystemClock.uptimeMillis(),
+                            MotionEvent.ACTION_DOWN,
+                            x,
+                            y,
+                            INTERNAL_POINTER_META_STATE);
+                    final MotionEvent m1 = MotionEvent.obtain(
+                            SystemClock.uptimeMillis(),
+                            SystemClock.uptimeMillis(),
+                            MotionEvent.ACTION_UP,
+                            x,
+                            y,
+                            INTERNAL_POINTER_META_STATE);
+                    boolean pointer_on_softkeyboard = false;
+                    try {
+                        getSingletonInstrumentation().sendPointerSync(m);
+                        getSingletonInstrumentation().sendPointerSync(m1);
+                    } catch (SecurityException e) {
+                        pointer_on_softkeyboard = true;
+                    }
+                    if (!pointer_on_softkeyboard) {
+                        if (y == height) {
+                            if (counter++ < 100) {
+                                Thread.yield();
+                                continue;
+                            }
+                        } else if (y > 0) {
+                            softkeyboard_height = mainScreenView.getHeight() - y;
+                        }
+                        break;
+                    }
+                    y--;
+
+                }
+                if (softkeyboard_height > 0) {
+                    // it is calculated and saved in softkeyboard_height
+                } else {
+                    calculated_keyboard_height = false;
+                }
+            }
+        };
+        t.start();
+        */
     }
 
 

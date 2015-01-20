@@ -41,7 +41,7 @@ public class MenuActionProvider extends android.support.v4.view.ActionProvider {
         // TODO Auto-generated constructor stub
         this.context = context;
         inflater = LayoutInflater.from(context);
-        view = inflater.inflate(R.layout.include_action_menu_main, null);
+        view = inflater.inflate(R.layout.include_actionbar_global, null);
     }
 
     @Override
