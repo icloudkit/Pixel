@@ -706,7 +706,7 @@ public class MainActivity extends FragmentActivity implements ViewPager.OnPageCh
         // Only show items in the action bar relevant to this screen
         // if the drawer is not showing. Otherwise, let the drawer
         // decide what to show in the action bar.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_global, menu);
         restoreActionBar();
         // *return true;
         // *}

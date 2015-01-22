@@ -33,7 +33,6 @@ import net.quduo.pixel.R;
 public class AboutActivity extends ActionBarActivity {
 
     private static final String TAG = AboutActivity.class.getName();
-
     private static final boolean DEBUG = BuildConfig.DEBUG;
 
     @Override

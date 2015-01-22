@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <!--
+    android:columnWidth="20dp"
+    android:numColumns="auto_fit"
+    android:numColumns="7"
+    android:stretchMode="columnWidth"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+
+    android:fastScrollEnabled="false"
+    android:nestedScrollingEnabled="false"
+    -->
+    <GridView
+        android:id="@+id/emoticon_grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="40dp"
+        android:numColumns="auto_fit"
+        android:horizontalSpacing="8dp"
+        android:isScrollContainer="false"
+        android:gravity="center"
+        android:overScrollMode="never"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="20dp"
+        android:scrollbars="none"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="2dp" />
+</LinearLayout>

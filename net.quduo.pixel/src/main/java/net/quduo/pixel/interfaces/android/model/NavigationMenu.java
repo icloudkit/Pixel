@@ -18,9 +18,6 @@ package net.quduo.pixel.interfaces.android.model;
 
 import java.io.Serializable;
 
-/**
- * Created by mango on 14/12/23.
- */
 public class NavigationMenu implements Serializable {
 
     private String title;

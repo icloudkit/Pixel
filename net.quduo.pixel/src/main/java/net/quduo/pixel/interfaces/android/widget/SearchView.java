@@ -31,6 +31,7 @@ import android.widget.EditText;
 import net.quduo.pixel.R;
 
 public class SearchView extends EditText implements View.OnFocusChangeListener, TextWatcher {
+
     /**
      * 删除按钮的引用
      */
@@ -101,8 +102,7 @@ public class SearchView extends EditText implements View.OnFocusChangeListener, 
      */
     protected void setClearIconVisible(boolean visible) {
         Drawable right = visible ? mClearDrawable : null;
-        setCompoundDrawables(getCompoundDrawables()[0],
-                getCompoundDrawables()[1], right, getCompoundDrawables()[3]);
+        setCompoundDrawables(getCompoundDrawables()[0], getCompoundDrawables()[1], right, getCompoundDrawables()[3]);
     }
 
 
@@ -110,8 +110,7 @@ public class SearchView extends EditText implements View.OnFocusChangeListener, 
      * 当输入框里面内容发生变化的时候回调的方法
      */
     @Override
-    public void onTextChanged(CharSequence s, int start, int count,
-                              int after) {
+    public void onTextChanged(CharSequence s, int start, int count, int after) {
         setClearIconVisible(s.length() > 0);
     }
 

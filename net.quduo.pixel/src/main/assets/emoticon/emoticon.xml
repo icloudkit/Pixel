@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<emoticon>
+	<group id="1" name="默认1" expression="xxx">
+	    <item id="1" name="微笑" expression="xxx" image="" />
+	    <item id="2" name="吐舌头" expression="xxx" image="" />
+	    <item id="3" name="大笑" expression="xxx" image="" />
+	    <item id="4" name="偷笑" expression="xxx" image="" />
+	    <item id="5" name="酷" expression="xxx" image="" />
+	    <item id="6" name="坏笑" expression="xxx" image="" />
+	    <item id="7" name="亲亲" expression="xxx" image="" />
+	    <item id="8" name="奋斗" expression="xxx" image="" />
+	    <item id="9" name="难过" expression="xxx" image="" />
+	    <item id="10" name="无聊" expression="xxx" image="" />
+	    <item id="11" name="抠鼻屎" expression="xxx" image="" />
+	    <item id="12" name="汗" expression="xxx" image="" />
+	    <item id="13" name="衰" expression="xxx" image="" />
+	    <item id="14" name="疑问" expression="xxx" image="" />
+	    <item id="15" name="饥饿" expression="xxx" image="" />
+	    <item id="16" name="白眼" expression="xxx" image="" />
+	    <item id="17" name="仰慕" expression="xxx" image="" />
+	    <item id="18" name="可怜" expression="xxx" image="" />
+	    <item id="19" name="生气" expression="xxx" image="" />
+	    <item id="20" name="抓狂" expression="xxx" image="" />
+	</group>
+    <!--
+	<group id="2" name="默认2" expression="xxx">
+	    <item id="21" name="愤怒" expression="xxx">e021.png</item>
+	    <item id="22" name="敲打" expression="xxx">e022.png</item>
+	    <item id="23" name="晕" expression="xxx">e023.png</item>
+	    <item id="24" name="鄙视" expression="xxx">e024.png</item>
+	    <item id="25" name="no" expression="xxx">e025.png</item>
+	    <item id="26" name="摊手" expression="xxx">e026.png</item>
+	    <item id="27" name="闭嘴" expression="xxx">e027.png</item>
+	    <item id="28" name="大哭" expression="xxx">e028.png</item>
+	    <item id="29" name="晚安" expression="xxx">e029.png</item>
+	    <item id="30" name="困" expression="xxx">e030.png</item>
+	    <item id="31" name="犯错" expression="xxx">e031.png</item>
+	    <item id="32" name="恶心" expression="xxx">e032.png</item>
+	    <item id="33" name="再见" expression="xxx">e033.png</item>
+	    <item id="34" name="囧" expression="xxx">e034.png</item>
+	    <item id="35" name="路过" expression="xxx">e035.png</item>
+	    <item id="36" name="赞扬" expression="xxx">e036.png</item>
+	    <item id="37" name="弱爆了" expression="xxx">e037.png</item>
+	    <item id="38" name="好的" expression="xxx">e038.png</item>
+	    <item id="39" name="握手" expression="xxx">e039.png</item>
+	    <item id="40" name="勾引" expression="xxx">e040.png</item>
+	</group>
+	<group id="3" name="默认3" expression="xxx">
+	    <item id="41" name="拉钩" expression="xxx">e041.png</item>
+	    <item id="42" name="鼓掌" expression="xxx">e042.png</item>
+	    <item id="43" name="爸爸" expression="xxx">e043.png</item>
+	    <item id="44" name="妈妈" expression="xxx">e044.png</item>
+	    <item id="45" name="男孩" expression="xxx">e045.png</item>
+	    <item id="46" name="女孩" expression="xxx">e046.png</item>
+	    <item id="47" name="小红花" expression="xxx">e047.png</item>
+	    <item id="48" name="喵喵" expression="xxx">e048.png</item>
+	    <item id="49" name="猪头" expression="xxx">e049.png</item>
+	    <item id="50" name="礼物" expression="xxx">e050.png</item>
+	    <item id="51" name="学校" expression="xxx">e051.png</item>
+	    <item id="52" name="家里" expression="xxx">e052.png</item>
+	    <item id="53" name="校车" expression="xxx">e053.png</item>
+	    <item id="54" name="红心" expression="xxx">e054.png</item>
+	    <item id="55" name="心碎" expression="xxx">e055.png</item>
+	    <item id="56" name="蛋糕" expression="xxx">e056.png</item>
+	    <item id="57" name="玫瑰" expression="xxx">e057.png</item>
+	    <item id="58" name="奖杯" expression="xxx">e058.png</item>
+	    <item id="59" name="咖啡" expression="xxx">e059.png</item>
+	    <item id="60" name="便便" expression="xxx">e060.png</item>
+	</group>
+	-->
+</emoticon>

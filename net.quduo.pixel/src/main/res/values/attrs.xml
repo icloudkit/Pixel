@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- 圆角图片View -->
     <declare-styleable name="RoundedCornersImageView">
         <attr name="cornerRadius" format="dimension" />
     </declare-styleable>
 
+    <!-- 上拉刷新，下拉加载更多ListView -->
     <declare-styleable name="DragDropListView">
         <attr name="isDropDownStyle" format="boolean" />
         <attr name="isOnBottomStyle" format="boolean" />
